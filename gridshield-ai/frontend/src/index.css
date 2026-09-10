@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark: #1e3a5f;
+  --brand-mid: #2563eb;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.risk-critical { @apply text-red-700 bg-red-50 border-red-200; }
+.risk-high      { @apply text-orange-700 bg-orange-50 border-orange-200; }
+.risk-medium    { @apply text-yellow-700 bg-yellow-50 border-yellow-200; }
+.risk-low       { @apply text-green-700 bg-green-50 border-green-200; }
+
+.card { @apply bg-ink-800 border border-gray-200 rounded-lg shadow-sm; }
+.btn-primary { @apply bg-amber text-ink px-4 py-2 rounded-md text-sm font-semibold hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors; }
+.btn-secondary { @apply bg-ink-700 text-white border border-ink-400 px-4 py-2 rounded-md text-sm font-medium hover:bg-ink-600 transition-colors; }
+.btn-danger { @apply bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors; }
+
+/* ── Landing page ─────────────────────────────────────────────────────── */
+.landing { @apply font-sans; }
+.landing .mono { @apply font-mono; }
+.landing-btn-primary {
+  @apply inline-flex items-center justify-center gap-2 bg-amber text-ink font-semibold px-5 py-3 rounded-md
+         text-sm hover:bg-amber-400 transition-colors;
+}
+.landing-btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 border border-ink-400 text-white font-medium px-5 py-3
+         rounded-md text-sm hover:border-current-500 hover:text-current-400 transition-colors;
+}
+.landing-section { @apply max-w-6xl mx-auto px-6 lg:px-8; }
